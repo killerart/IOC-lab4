@@ -136,17 +136,21 @@ function App() {
           </Row>
           <Row>
             <Col>
-              <Table bordered>
+              <Table bordered className="w-auto">
                 <thead>
                   <th>Цифра</th>
-                  <th>Цвет</th>
                   <th>Время (c)</th>
                 </thead>
                 <tbody>
                   {clickTimes(times).map((time) => (
                     <tr>
-                      <td>{time.cell.number}</td>
-                      <td>{time.cell.color ? 'red' : 'black'}</td>
+                      <td
+                        className={`text-white bg-${
+                          time.cell.color ? 'red' : 'black'
+                        }`}
+                      >
+                        {time.cell.number}
+                      </td>
                       <td>{time.time}</td>
                     </tr>
                   ))}
