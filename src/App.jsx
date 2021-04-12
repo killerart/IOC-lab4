@@ -1,6 +1,6 @@
 import { Range } from 'immutable';
 import { useCallback, useState } from 'react';
-import { Col, Container, Row, Table } from 'reactstrap';
+import { Col, Container, Row, Table, Button } from 'reactstrap';
 import './App.css';
 import { shuffleArray } from './utils/utils';
 
@@ -67,9 +67,9 @@ function App() {
   if (!started) {
     return (
       <div className="vw-100 vh-100 d-flex justify-content-center align-items-center">
-        <button className="btn btn-dark btn-custom" onClick={onStartClick}>
+        <Button color="dark" className="btn-custom" onClick={onStartClick}>
           Start
-        </button>
+        </Button>
       </div>
     );
   }
@@ -80,13 +80,13 @@ function App() {
         className="align-items-center"
         style={{ justifyContent: 'space-evenly' }}
       >
-        <Col xs="auto" className="cell">
+        {/* <Col xs="auto" className="cell">
           {current.color || finished ? (
             <></>
           ) : (
             <div className="d-flex cell bg-black">{current.number}</div>
           )}
-        </Col>
+        </Col> */}
         <Col xs="auto">
           <Table color="dark" bordered className="w-auto mx-auto">
             <tbody>
@@ -110,13 +110,13 @@ function App() {
           </Table>
         </Col>
 
-        <Col xs="auto" className="cell">
+        {/* <Col xs="auto" className="cell">
           {current.color && !finished ? (
             <div className="d-flex cell bg-red">{current.number}</div>
           ) : (
             <></>
           )}
-        </Col>
+        </Col> */}
       </Row>
       {finished ? (
         <>
